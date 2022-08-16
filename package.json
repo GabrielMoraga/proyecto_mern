@@ -1,0 +1,24 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2"
+  },
+  "engines": {
+    "node": "v16.13.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

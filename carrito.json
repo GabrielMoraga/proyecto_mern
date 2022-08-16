@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "timestamp": 1658684333655,
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": 1212,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "timestamp": 1658684335146,
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": 1212,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      },
+      {
+        "error": "objeto id: undefined no encontrado"
+      },
+      {
+        "id": 3,
+        "timestamp": 1658681360762,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      },
+      {
+        "id": 2,
+        "timestamp": 1658681359742,
+        "nombre": "Despertador",
+        "descripcion": "Este es un despertador",
+        "código": "01245",
+        "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-512.png",
+        "precio": 60,
+        "stock": 10
+      },
+      {
+        "id": 4,
+        "timestamp": 1658681361636,
+        "nombre": "Pizarra",
+        "descripcion": "Esta es una pizarra",
+        "código": "01245",
+        "foto": "https://cdn3.iconfinder.com/data/icons/education-209/64/board-math-class-school-128.png",
+        "precio": 60,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "timestamp": 1658684335972,
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": 1212,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "timestamp": 1658684338630,
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": 1212,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "timestamp": 1658684339982,
+    "productos": [
+      {
+        "id": 1,
+        "timestamp": 1212,
+        "nombre": "arte1",
+        "descripcion": "Este es un arte",
+        "código": "01245",
+        "foto (url)": "",
+        "precio": 60,
+        "stock": 10
+      }
+    ]
+  }
+]

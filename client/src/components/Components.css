@@ -1,0 +1,10 @@
+/* ProductosCards */
+.card {
+    width: 250px;
+    min-width: 150px;
+}
+
+/* Formulario */
+#form-productos {
+    max-width: 600px;
+}
