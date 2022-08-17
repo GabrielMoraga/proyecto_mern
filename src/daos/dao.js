@@ -15,7 +15,7 @@ let CarritosApi = CarritosDaoMongoDB
 switch(motorDB) {
     case 'mongo':
         ProductosApi = ProductosDaoMongoDB
-        //CarritosApi = new CarritosDaoMongoDB
+        CarritosApi = CarritosDaoMongoDB
         console.log('db mongoDB')
         break;
     case 'firebase':

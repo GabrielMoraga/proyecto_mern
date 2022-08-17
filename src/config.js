@@ -1,5 +1,6 @@
 // Configuración de las conexiones a dbs
 const mongoose = require('mongoose')
+const serviceAccount = require("../ecommerce-dee3b-firebase-adminsdk-tfcuf-9b124223eb.json")
 
 // mongoose.connect('mongodb://localhost:27017/ecommerce')
 
@@ -41,4 +42,5 @@ productos: modeloProductos,
 carritos: modeloCarritos
 }
 
-module.exports = models
+
+module.exports = {models, serviceAccount}

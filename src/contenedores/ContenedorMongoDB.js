@@ -7,7 +7,6 @@ class ContenedorMongoDB {
     async guardar(obj) {
         try {
             const newObj = {timestamp: Date.now(), ...obj }
-            console.log(newObj)
             const saveModel = new this.model(newObj)
             const objectSaved = await saveModel.save()
             return objectSaved
