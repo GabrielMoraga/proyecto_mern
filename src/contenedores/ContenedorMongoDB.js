@@ -38,9 +38,10 @@ class ContenedorMongoDB {
 
 
     //Update
-    async actualizar(id, obj) {
+    async actualizar(obj) {
+        console.log(obj)
         try {
-            const objs = await this.model.updateOne({id: id}, {obj})
+            const objs = await this.model.updateOne({id: obj.id}, obj)
             return objs
         } catch (error) {
             return error

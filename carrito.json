@@ -30,9 +30,6 @@
         "stock": 10
       },
       {
-        "error": "objeto id: undefined no encontrado"
-      },
-      {
         "id": 3,
         "timestamp": 1658681360762,
         "nombre": "arte1",

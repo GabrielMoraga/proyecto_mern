@@ -1,7 +1,7 @@
 const express = require('express');
 const {Router} = require('express');
 //const ManejoArchivo = require('./controllers/ManejoArchivo.js');
-const {ProductosApi} = require('./daos/dao.js')
+const {ProductosApi, CarritosApi} = require('./daos/dao.js')
 //const CarritosApi = require('./daos/dao.js')
 const path = require('path');
 const auth = require('./middleware/auth.js')
@@ -13,6 +13,7 @@ const app = express()
 //const productosApi = new ManejoArchivo('productos.json');
 //const carritoApi = new ManejoArchivo('carrito.json');
 const productosApi = new ProductosApi;
+const carritosApi = new CarritosApi;
 
 //--------------------------------------------
 // agrego middlewares
@@ -71,20 +72,20 @@ routerProductos.delete('/', async (req, res) => {
     res.json(resp)
 });
 
-/*--------------------------------------------
+//--------------------------------------------
 // configuro los endpoint para Carrito
 
 // Crea un carrito y devuelve su id.
 routerCarrito.post('/', async (req, res) => {
     const carrito = req.body;
-    const resp = await carritoApi.guardar(carrito)
+    const resp = await carritosApi.guardar(carrito)
     res.json(resp.id)
 });
 
 // Vacía un carrito y lo elimina.
 routerCarrito.delete('/:id', async (req, res) => {
     const id = req.params.id;
-    const resp = await carritoApi.borrar(id)
+    const resp = await carritosApi.borrar(id)
     res.json(resp)
 });
 
@@ -92,31 +93,31 @@ routerCarrito.delete('/:id', async (req, res) => {
 // Listar todos los productos guardados en el carrito.
 routerCarrito.get('/:id/productos', async (req, res) => {
     const id = req.params.id;
-    const resp = await carritoApi.listar(id)
+    const resp = await carritosApi.listar(id)
     res.json(resp.productos)
 });
 
 
 // Incorporar productos al carrito por su id de producto
 routerCarrito.post('/:id/productos', async (req, res) => {
-    const id_carr = req.params.id;
-    const id_prod = req.body;
-    const prod = await productosApi.listar(id_prod)
-    const resp = await carritoApi.addPropductoCarrito(id_carr, prod)
-    res.json(resp)
+    let carrito = await carritosApi.listar(req.params.id);
+    const prod = await productosApi.listar(req.body.id);
+    carrito.productos.push(prod)
+    await carritosApi.actualizar(carrito)
+    res.end()
 });
 
 
 // Eliminar un producto del carrito por su id de carrito y de producto
 routerCarrito.delete('/:id/productos/:id_prod', async (req, res) => {
-    const id_carr = req.params.id;
-    const id_prod = req.params.id_prod;
-    console.log(id_prod)
-    const prod = await productosApi.listar(id_prod)
-    const resp = await carritoApi.deletePropductoCarrito(id_carr, prod)
-    res.json(resp)
+    const carrito = await carritosApi.listar(req.params.id);
+    const index = carrito.productos.findIndex(p => p.id == req.params.id_prod)
+    if(index != -1) {
+        carrito.productos.splice(index,1)
+        const resp = await carritosApi.actualizar(carrito)
+        res.json(resp)
+    }
 });
-*/
 
 //--------------------------------------------
 // configuro los endpoint para rutas no válidas donde devuelve la React app

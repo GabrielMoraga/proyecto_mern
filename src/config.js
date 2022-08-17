@@ -30,7 +30,7 @@ const carritoSchema= new mongoose.Schema(
     {
         id: Number,
         timestamp: Date,
-        productos: Array
+        productos: []
     });
 
 const modeloProductos = mongoose.model('Productos',productoSchema)
